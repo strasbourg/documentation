@@ -1,0 +1,73 @@
+//= require reset
+//= require ./documentation/pygments
+//= require_self
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic)
+
+@import bourbon
+@import neat
+
+$green: #98BF29
+$blue: #018ECB
+
+html
+  background-image: image-url('agsquare.png')
+  background-color: lighten($green, 40%)
+  height: 100%
+
+body
+  +outer-container
+  margin: auto
+  width: 900px
+  height: 100%
+  font-family: 'Lato', sans-serif
+  font-size: 16px
+  font-weight: 300
+  line-height: 1.5em
+
+h1, h2, h3, h4, h5
+  font-weight: 300
+  font-style: italic
+
+h1
+  font-size: 1.6em
+
+h2
+  font-size: 1.4em
+
+h3
+  font-size: 1.2em
+
+a
+  color: darken($blue, 15%)
+  text-decoration: none
+  &:hover
+    color: darken($blue, 20%)
+
+#menu
+  +span-columns(4)
+  +omega
+  +pad(50px 0)
+  background-color: $green
+  background-image: image-url('strasbourg.png')
+  background-repeat: no-repeat
+  background-size: 100% auto
+  color: white
+  min-height: 100%
+
+  h2
+    margin: 1em 0 0.2em 0
+    padding: 0.1em 1em
+    width: 100%
+
+  ul
+    list-style: none
+    margin: 0px
+    padding: 0.2em 0 1em 1em
+
+#content
+  +span-columns(8)
+  +pad
+  +omega
+  min-height: 100%
+  background: white
