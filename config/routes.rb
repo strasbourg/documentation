@@ -7,7 +7,9 @@ SxbDataMissingApi::Application.routes.draw do
     end
     scope module: :cts, as: :cts, subdomain: :cts do
       scope module: :v1, format: :json do
-        resources :stops, only: [:index, :show]
+        resources :stops, only: [:index, :show] do
+          resources :arrivals
+        end
       end
     end
   end

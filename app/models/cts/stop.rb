@@ -10,12 +10,13 @@ class Cts::Stop
   field :name
   field :code, type: Integer
 
+
   def next_arrivals(time: Time.now)
+    time = Time.new(time) unless time.is_a? Time
     response = cts_soap_client.call :recherche_prochaines_arrivees_web,
       message: { code_arret: self.code, heure: time, nb_horaires: 1}
     response = response.body[:recherche_prochaines_arrivees_web_response]
-    response = response[:recherche_prochaines_arrivees_web_result]
-    response[:liste_arrivee][:arrivee]
+    response[:recherche_prochaines_arrivees_web_result][:liste_arrivee][:arrivee]
   end
 
   def timesheets

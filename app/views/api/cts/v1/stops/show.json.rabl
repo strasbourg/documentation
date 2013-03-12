@@ -1,2 +1,4 @@
 object @stop
-attributes :code, :name, :next_arrivals, :timesheets
+extends 'api/cts/v1/stops/stop'
+attribute :next_arrivals
+attribute :timesheets
