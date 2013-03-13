@@ -14,7 +14,7 @@ Les attributs que l'API permet de récupérer sont :
 Pour l'instant, le seul moyen de trouver un arrêt est de lister tout les arrêts.
 
     GET http://cts.api.strasbourg-data.fr/stops
-[exemple](http://cts.api.strasbourg-data.fr/stops)
+<a class="btn" href="http://cts.api.strasbourg-data.fr/stops">tester</a>
 
 #### Réponse
     Status: 200 OK
@@ -36,7 +36,7 @@ Pour l'instant, le seul moyen de trouver un arrêt est de lister tout les arrêt
 ### Détails d'un arrêt
 
     GET http://cts.api.strasbourg-data.fr/stops/:id
-[exemple de l'arrêt #322 (Langstross/Grand Rue)](http://cts.api.strasbourg-data.fr/stops/322)
+<a class="btn" href="http://cts.api.strasbourg-data.fr/stops/322">tester</a>
 
 #### Réponse
     Status: 200 OK
