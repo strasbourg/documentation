@@ -1,0 +1,27 @@
+h1, h2, h3, h4, h5
+  font-weight: 300
+  font-style: italic
+
+h1
+  font-size: 1.6em
+
+h2
+  font-size: 1.4em
+
+h3
+  font-size: 1.2em
+
+a
+  color: $blue
+  text-decoration: none
+  &:hover
+    color: darken($blue, 10%)
+
+  &.btn
+    background: $blue
+    color: white
+    padding: 0.3em 1em
+    border-radius: 0.5em
+
+    &:hover
+      background: darken($blue, 10%)

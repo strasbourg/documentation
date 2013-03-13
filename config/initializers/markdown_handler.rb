@@ -10,7 +10,7 @@ class MarkdownTemplateHandler
     source = erb.call(template)
     <<-SOURCE
     pygmentized = Pygmentize.new(
-      filter_html: true,
+      filter_html: false,
       hard_wrap: true
     )
     # renderer = Redcarpet::Render::HTML.new(hard_wrap: true)
