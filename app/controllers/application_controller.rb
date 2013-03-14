@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def self.log_request(scope: nil)
     instance_eval do
       before_filter do |c|
-        ApiRequest.create ip_address: request.env['REMOTE_ADDR'], params: params.permit(:id, :controller, :action)
+        ApiRequest.create ip_address: request.remote_ip, params: params.permit(:id, :controller, :action)
       end
     end
   end
