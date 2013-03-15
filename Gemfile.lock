@@ -59,6 +59,9 @@ GEM
       multi_json (~> 1.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     gyoku (1.0.0)
       builder (>= 2.1.2)
     haml (4.0.0)
@@ -212,7 +215,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   database_cleaner
-  factory_girl
+  factory_girl_rails
   haml
   high_voltage
   jquery-rails

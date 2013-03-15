@@ -7,7 +7,6 @@ require 'rack/test'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-
 RSpec.configure do |config|
   config.include Rack::Test::Methods
   config.include JsonSpec::Helpers
