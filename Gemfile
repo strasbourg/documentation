@@ -27,7 +27,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'json_spec'
   gem 'database_cleaner'
 end
