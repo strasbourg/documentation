@@ -3,11 +3,11 @@
 Les arrêts de la CTS sont identifiés pas leur `code`.
 
 Les attributs que l'API permet de récupérer sont :
+
 - code
 - nom
 - horaires en temps réel
 - fiche d'horaires
-
 
 ## Trouver le code d'un arrêt
 
