@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Api Strasbourg</title>
+    <link href="/assets/stylesheets/documentation.css?1364482096" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/javascripts/documentation.js?1364482096" type="text/javascript"></script>
+  </head>
+  <body>
+    <aside>
+      <div id='menu'>
+        <a href="/"><img class="strasbourg logo" src="/assets/images/logo.png?1364481531" /></a>
+        <h2>CTS</h2>
+        <ul>
+          <li><a href="/cts/arrets">Arrêts bus et tram</a></li>
+          <li><a href="/cts/temps-reel">Horaires en temps réel</a></li>
+        </ul>
+        <h2>Parkings</h2>
+        <ul>
+          <li><a href="/parkings">Coordonnées et disponibilité</a></li>
+        </ul>
+        <h2>Velhop</h2>
+        <ul>
+          <li><a href="/velhop">Coordonnées et disponibilité</a></li>
+        </ul>
+      </div>
+      <footer>
+        <p><a href="/sources-de-donnees">Sources de données</a></p>
+        <p><a href="https://github.com/strasbourg/open-data-apis">Sources du projet</a></p>
+      </footer>
+    </aside>
+    <section id='content'>
+      <h1>Arrêts de bus et tram</h1>&#x000A;&#x000A;<p>Les arrêts de la CTS sont identifiés pas leur <code>code</code>.</p>&#x000A;&#x000A;<p>Les attributs que l&#39;API permet de récupérer sont :</p>&#x000A;&#x000A;<ul>&#x000A;<li>code</li>&#x000A;<li>nom</li>&#x000A;<li>horaires en temps réel</li>&#x000A;<li>fiche d&#39;horaires</li>&#x000A;</ul>&#x000A;&#x000A;<h2>Trouver le code d&#39;un arrêt</h2>&#x000A;&#x000A;<p>Pour l&#39;instant, le seul moyen de trouver un arrêt est de lister tout les arrêts.</p>&#x000A;<div class="highlight"><pre><span class="n">GET</span> <span class="n">http</span><span class="o">:</span><span class="c1">//cts.api.strasbourg-data.fr/stops</span>&#x000A;</pre></div>&#x000A;<p><a class="btn" href="http://cts.api.strasbourg-data.fr/stops">tester</a></p>&#x000A;&#x000A;<h4>Réponse</h4>&#x000A;<div class="highlight"><pre><span class="n">Status</span><span class="o">:</span> <span class="mi">200</span> <span class="n">OK</span>&#x000A;</pre></div><div class="highlight"><pre><span class="cp">[</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Abattoirs (HOLTZHEIM)&quot;</span>&#x000A;  <span class="p">},</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cité Meinau&quot;</span>&#x000A;  <span class="p">},</span>&#x000A;  <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>&#x000A;<span class="cp">]</span>&#x000A;</pre></div>&#x000A;<h3>Détails d&#39;un arrêt</h3>&#x000A;<div class="highlight"><pre><span class="n">GET</span> <span class="n">http</span><span class="o">:</span><span class="c1">//cts.api.strasbourg-data.fr/stops/:id</span>&#x000A;</pre></div>&#x000A;<p><a class="btn" href="http://cts.api.strasbourg-data.fr/stops/322">tester</a></p>&#x000A;&#x000A;<h4>Réponse</h4>&#x000A;<div class="highlight"><pre><span class="n">Status</span><span class="o">:</span> <span class="mi">200</span> <span class="n">OK</span>&#x000A;</pre></div><div class="highlight"><pre><span class="p">{</span>&#x000A;  <span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="m">322</span><span class="o">,</span>&#x000A;  <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Langstross/Grand Rue&quot;</span><span class="o">,</span>&#x000A;  <span class="s2">&quot;next_arrivals&quot;</span><span class="o">:</span><span class="cp">[</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;Tram&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;destination&quot;</span><span class="p">:</span> <span class="s2">&quot;A Hautepierre&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;horaire&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-03-06T17:56:02+00:00&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;est_apres_minuit&quot;</span><span class="p">:</span> <span class="kc">false</span>&#x000A;    <span class="p">},</span>&#x000A;    <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>&#x000A;  <span class="cp">]</span><span class="o">,</span>&#x000A;  <span class="s2">&quot;timesheets&quot;</span><span class="o">:</span><span class="cp">[</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="s2">&quot;libelle_destination&quot;</span><span class="p">:</span> <span class="s2">&quot;Illkirch Lixenbuhl&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;53/78539.pdf&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;debut_validite&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-09-03T00:00:00+00:00&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;fin_validite&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-23T00:00:00+00:00&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;type_periode&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;libelle_periode&quot;</span><span class="p">:</span> <span class="s2">&quot;Hiver Tram 2012-2013&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;code_arret&quot;</span><span class="p">:</span> <span class="s2">&quot;322A&quot;</span><span class="p">,</span>&#x000A;      <span class="s2">&quot;ligne&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span>&#x000A;    <span class="p">},</span>&#x000A;    <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>&#x000A;  <span class="cp">]</span>&#x000A;<span class="p">}</span>&#x000A;</pre></div>
+    </section>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39074772-1']);
+      _gaq.push(['_setDomainName', 'strasbourg-data.fr']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

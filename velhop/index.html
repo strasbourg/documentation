@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Api Strasbourg</title>
+    <link href="/assets/stylesheets/documentation.css?1364482096" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/javascripts/documentation.js?1364482096" type="text/javascript"></script>
+  </head>
+  <body>
+    <aside>
+      <div id='menu'>
+        <a href="/"><img class="strasbourg logo" src="/assets/images/logo.png?1364481531" /></a>
+        <h2>CTS</h2>
+        <ul>
+          <li><a href="/cts/arrets">Arrêts bus et tram</a></li>
+          <li><a href="/cts/temps-reel">Horaires en temps réel</a></li>
+        </ul>
+        <h2>Parkings</h2>
+        <ul>
+          <li><a href="/parkings">Coordonnées et disponibilité</a></li>
+        </ul>
+        <h2>Velhop</h2>
+        <ul>
+          <li><a href="/velhop">Coordonnées et disponibilité</a></li>
+        </ul>
+      </div>
+      <footer>
+        <p><a href="/sources-de-donnees">Sources de données</a></p>
+        <p><a href="https://github.com/strasbourg/open-data-apis">Sources du projet</a></p>
+      </footer>
+    </aside>
+    <section id='content'>
+      <h1>Coordonnées et disponibilité des stations</h1>&#x000A;<div class="highlight"><pre><span class="n">GET</span> <span class="n">http</span><span class="o">:</span><span class="c1">//velhop.api.strasbourg-data.fr/stations</span>&#x000A;</pre></div>&#x000A;<p><a class="btn" href="http://velhop.api.strasbourg-data.fr/stations">tester</a></p>&#x000A;&#x000A;<h2>Reponse</h2>&#x000A;<div class="highlight"><pre><span class="n">Status</span><span class="o">:</span> <span class="mi">200</span> <span class="n">OK</span>&#x000A;</pre></div><div class="highlight"><pre><span class="cp">[</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="s2">&quot;na&quot;</span><span class="p">:</span> <span class="s2">&quot;111 Campus d&#39;Illkirch&quot;</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">111</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;la&quot;</span><span class="p">:</span> <span class="mf">48.529616</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;lg&quot;</span><span class="p">:</span> <span class="mf">7.734226</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;av&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;fr&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="mi">30</span>&#x000A;  <span class="p">},</span>&#x000A;  <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>&#x000A;<span class="cp">]</span>&#x000A;</pre></div>
+    </section>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39074772-1']);
+      _gaq.push(['_setDomainName', 'strasbourg-data.fr']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

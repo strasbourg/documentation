@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Syntax error:Undefined variable:\"$blue\".\A on line 15 of /Users/paul/projects/strasbourg-data/source/assets/stylesheets/documentation/typography.css.sass\A \A 10:\A 11:h3\A 12:font-size:1.2em\A 13:\A 14:a\A 15:color:$blue\A 16:text-decoration:none\A 17:&:hover\A 18:color:darken($blue,10%)\A 19:\A 20:&.btn"}
