@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Api Strasbourg
+    = stylesheet_link_tag 'documentation', media: 'all'
+    = javascript_include_tag 'documentation'
+  %body
+    %aside
+      #menu
+        = link_to image_tag('logo.png', class: 'strasbourg logo'), '/'
+        %h2 CTS
+        %ul
+          %li= link_to 'Arrêts bus et tram', '/cts/arrets'
+          %li= link_to 'Horaires en temps réel', '/cts/temps-reel'
+        %h2 Parkings
+        %ul
+          %li= link_to 'Coordonnées et disponibilité', '/parkings'
+        %h2 Velhop
+        %ul
+          %li= link_to 'Coordonnées et disponibilité', '/velhop'
+      %footer
+        %p= link_to 'Sources de données', '/sources-de-donnees'
+        %p= link_to 'Sources du projet', 'https://github.com/strasbourg/open-data-apis'
+    %section#content
+      = preserve do
+        = yield
+    = partial '/shared/google_analytics'
